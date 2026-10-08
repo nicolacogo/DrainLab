@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DrainLab v0.2.1</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">DrainLab <span>v0.2.1 beta</span></div>
+    <form id="searchForm">
+      <input id="searchBox" type="text" placeholder="Search location, postcode or place..." autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <div id="map"></div>
+
+    <aside id="panel">
+      <h2>Catchment</h2>
+      <p class="hint" id="drawHint">Use the polygon tool (top left of map) to draw a catchment.</p>
+
+      <div class="row"><span>Area</span><strong id="areaM2">–</strong></div>
+      <div class="row"><span></span><strong id="areaHa">–</strong></div>
+
+      <h2>Rainfall</h2>
+      <div class="tabs">
+        <label class="tab"><input type="radio" name="mode" value="direct" checked> Enter i directly</label>
+        <label class="tab"><input type="radio" name="mode" value="fsr"> FSR (Wallingford)</label>
+      </div>
+
+      <div id="directBox">
+        <label for="rain">Rainfall intensity, i (mm/hr)</label>
+        <input id="rain" type="number" min="0" step="0.01" value="50">
+      </div>
+
+      <div id="fsrBox" style="display:none">
+        <label for="m560">M5-60 (mm) <small>from Wallingford Vol 3 / FSR map</small></label>
+        <input id="m560" type="number" min="0" step="0.1" value="20">
+        <label for="ratio">Ratio r (M5-60 / M5-2day)</label>
+        <input id="ratio" type="number" min="0.1" max="0.5" step="0.01" value="0.4">
+        <label for="dur">Storm duration, D (min)</label>
+        <input id="dur" type="number" min="1" step="1" value="15">
+        <label for="rp">Return period, T (years)</label>
+        <input id="rp" type="number" min="1" step="1" value="30">
+        <label for="z1">Z1 for D and r <small>(table: Wallingford Vol 4 / BRE 365)</small></label>
+        <input id="z1" type="number" min="0" step="0.01" value="">
+        <label for="z2">Z2 for M5-D and T <small>(growth factor table)</small></label>
+        <input id="z2" type="number" min="0" step="0.01" value="">
+        <label for="cc">Climate change allowance (%)</label>
+        <input id="cc" type="number" min="0" step="1" value="40">
+        <div class="row"><span>M5-D</span><strong id="m5d">–</strong></div>
+        <div class="row"><span>MT-D (incl. CC)</span><strong id="mtd">–</strong></div>
+        <div class="row"><span>Intensity i</span><strong id="iFsr">–</strong></div>
+      </div>
+
+      <h2>Runoff</h2>
+      <label for="coef">Runoff coefficient, C (0–1)</label>
+      <input id="coef" type="number" min="0" max="1" step="0.01" value="0.65">
+
+      <div class="result">
+        <span>Peak runoff, Q</span>
+        <strong id="flow">–</strong>
+      </div>
+
+      <details>
+        <summary>How is this calculated?</summary>
+        <p>Rational Method:<br><code>Q = 2.78 × C × i × A</code></p>
+        <p>Q in L/s, C dimensionless, i in mm/hr, A in hectares.</p>
+        <p>FSR: M5-D = Z1 × M5-60; MT-D = Z2 × M5-D × (1 + CC); i = MT-D ÷ D. No areal reduction factor (fine for small catchments, under about 1 km²).</p>
+        <p id="calcDetail"></p>
+      </details>
+
+      <p class="warning">Preliminary estimate only. The user remains responsible for the choice of inputs and for verifying results.</p>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
