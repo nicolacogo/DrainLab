@@ -8,23 +8,33 @@ header { display: flex; align-items: center; gap: 24px; padding: 10px 16px; back
 #searchForm button { padding: 8px 14px; border: none; background: #2a9d8f; color: #fff; border-radius: 0 4px 4px 0; cursor: pointer; }
 main { flex: 1; display: flex; min-height: 0; }
 #map { flex: 1; }
-#panel { width: 320px; padding: 16px; overflow-y: auto; background: #f6f8fa; border-left: 1px solid #d8dee4; }
+#panel { width: 380px; padding: 16px; overflow-y: auto; background: #f6f8fa; border-left: 1px solid #d8dee4; }
 h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .5px; color: #0f3b57; margin: 18px 0 8px; }
 .hint { font-size: 13px; color: #586874; }
+.hint.small { font-size: 11px; margin-top: 4px; }
+.hint.ok { color: #1f7a4d; }
+.hint.bad { color: #b03a2e; }
 .row { display: flex; justify-content: space-between; font-size: 14px; padding: 3px 0; }
-label { display: block; font-size: 13px; margin: 10px 0 4px; }
-input[type=number] { width: 100%; padding: 7px; border: 1px solid #c3ccd5; border-radius: 4px; font-size: 14px; }
+label { display: block; font-size: 12px; margin: 8px 0 3px; }
+input[type=number], select { width: 100%; padding: 6px; border: 1px solid #c3ccd5; border-radius: 4px; font-size: 14px; background: #fff; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; column-gap: 10px; }
+#ddf { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; background: #fff; }
+#ddf th { background: #0f3b57; color: #fff; font-weight: 600; padding: 4px; text-align: right; }
+#ddf th small { color: #cfe0ea; font-weight: 400; }
+#ddf td { padding: 3px 4px; text-align: right; border-bottom: 1px solid #e5eaee; }
+#ddf td:first-child, #ddf th:first-child { text-align: left; }
+#ddf tbody tr { cursor: pointer; }
+#ddf tbody tr:hover { background: #eaf5f3; }
+#ddf tbody tr.sel { background: #2a9d8f; color: #fff; font-weight: 600; }
 .result { margin-top: 18px; padding: 14px; background: #0f3b57; color: #fff; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+.result small { color: #cfe0ea; }
 .result strong { font-size: 22px; }
 details { margin-top: 14px; font-size: 13px; }
 code { background: #e7ecf0; padding: 2px 5px; border-radius: 3px; }
 .warning { margin-top: 18px; font-size: 11px; color: #8a5a00; background: #fff4dc; padding: 8px; border-radius: 4px; }
-
-.tabs { display:flex; gap:10px; font-size:13px; }
-.tab { margin:0; display:flex; align-items:center; gap:4px; cursor:pointer; }
-small { color:#6b7a86; font-size:11px; }
-
-/* Polygon vertex handles */
+.tabs { display: flex; gap: 12px; font-size: 13px; }
+.tab { margin: 0; display: flex; align-items: center; gap: 4px; cursor: pointer; font-size: 13px; }
+small { color: #6b7a86; font-size: 11px; }
 .dl-vertex { background: #fff; border: 2px solid #2a9d8f; border-radius: 50%; box-shadow: 0 0 2px rgba(0,0,0,.4); }
 .dl-vertex.dl-mid { background: #2a9d8f; border-color: #fff; opacity: .8; }
 .leaflet-draw-tooltip { font-size: 11px; }
