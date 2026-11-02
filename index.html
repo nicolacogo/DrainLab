@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DrainLab v0.4</title>
+  <title>DrainLab Tools – Rainfall and runoff calculator for drainage design</title>
+  <meta name="description" content="Free online rainfall (FSR / Wallingford) and Rational Method runoff calculator for preliminary drainage design in England and Wales.">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
   <link rel="stylesheet" href="style.css">
+  <!-- ANALYTICS: paste the Cloudflare Web Analytics script here -->
 </head>
 <body>
   <header>
-    <div class="brand">DrainLab <span>v0.4 beta</span></div>
+    <div class="brand">DrainLab Tools <span>v0.5 beta</span></div>
     <form id="searchForm">
       <input id="searchBox" type="text" placeholder="Search location, postcode or place..." autocomplete="off">
       <button type="submit">Search</button>
     </form>
+    <nav><a href="about.html">About &amp; contact</a></nav>
   </header>
 
   <main>
@@ -50,8 +53,8 @@
           <div><label for="cc">Climate change (%)</label><input id="cc" type="number" min="0" step="5" value="40"></div>
           <div><label for="region">Region (Z2 table)</label>
             <select id="region">
-              <option value="EW">England & Wales</option>
-              <option value="SNI">Scotland & N. Ireland</option>
+              <option value="EW">England &amp; Wales</option>
+              <option value="SNI">Scotland &amp; N. Ireland</option>
             </select></div>
           <div><label for="dur">Duration D (min)</label><input id="dur" type="number" min="5" max="2880" step="1" value="15"></div>
         </div>
@@ -85,7 +88,12 @@
         <p id="calcDetail"></p>
       </details>
 
-      <p class="warning">Preliminary estimate only. The user remains responsible for the choice of inputs and for verifying results.</p>
+      <p class="warning">Preliminary estimate only. The user remains responsible for the choice of inputs and for verifying results. See <a href="terms.html">Terms of use</a>.</p>
+
+      <footer class="panel-foot">
+        © 2026 DrainLab Tools. All rights reserved.<br>
+        <a href="about.html">About &amp; contact</a> · <a href="terms.html">Terms &amp; privacy</a>
+      </footer>
     </aside>
   </main>
 

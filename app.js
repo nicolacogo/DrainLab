@@ -1,7 +1,7 @@
-// ---------- DrainLab v0.4 ----------
+// ---------- DrainLab Tools v0.5 ----------
 
 // 1. Map and base layers
-const map = L.map('map').setView([51.3, 0.5], 9);
+const map = L.map('map').setView([52.6, -1.5], 7);
 const esri = 'https://server.arcgisonline.com/ArcGIS/rest/services/';
 const esriAttr = 'Tiles &copy; Esri and contributors';
 const streets = L.tileLayer(esri + 'World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: esriAttr }).addTo(map);
@@ -79,8 +79,7 @@ fetch('data/fsr_grid.json')
     msg('Rainfall grid loaded. Click the map (or draw a catchment) to read M5-60 and r.', 'ok');
     addCoverageLayer();
   })
-  .catch(() => msg('Rainfall grid not available – enter M5-60 and r manually. ' +
-                   '(Testing locally? Run "python -m http.server 8000" and open http://localhost:8000.)', 'bad'));
+  .catch(() => msg('Rainfall grid not available – enter M5-60 and r manually.', 'bad'));
 
 function cellValue(arr, ix, iy) {
   if (ix < 0 || iy < 0 || ix >= grid.nx || iy >= grid.ny) return null;

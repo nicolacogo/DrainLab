@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About &amp; contact – DrainLab Tools</title>
+  <link rel="stylesheet" href="pages.css">
+  <!-- ANALYTICS: paste the Cloudflare Web Analytics script here -->
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html">DrainLab Tools</a>
+    <nav><a href="index.html">Calculator</a><a href="terms.html">Terms &amp; privacy</a></nav>
+  </header>
+  <main>
+    <h1>About DrainLab Tools</h1>
+    <p>DrainLab Tools is a free online calculator for preliminary drainage design. Click a location in England or Wales,
+       draw a catchment, and get FSR (Wallingford Procedure) rainfall intensities for any duration and return period,
+       together with a Rational Method peak runoff estimate.</p>
+    <p>It was created by a UK drainage engineer to speed up the early stages of drainage design, in a tool that is quick,
+       transparent and free to use. Every calculation step is shown so you can check it.</p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li>Location search by postcode or place name, with street, satellite and topographic maps</li>
+      <li>Catchment drawing with automatic area calculation</li>
+      <li>M5-60 and r read from a digitised version of the Wallingford Procedure maps</li>
+      <li>Rainfall depth and intensity table from 5 minutes to 48 hours, with a climate change allowance</li>
+      <li>Rational Method peak runoff</li>
+    </ul>
+
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Feedback, bug reports and ideas are very welcome.</p>
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID (formspree.io) -->
+      <form action="https://formspree.io/f/mgaapzqq" method="POST">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <p style="font-size:12px;color:#6b7a86">Your details are used only to reply to your message. See <a href="terms.html#privacy">Privacy</a>.</p>
+        <button class="btn" type="submit">Send message</button>
+      </form>
+    </div>
+
+    <h2>Support the project</h2>
+    <div class="card">
+      <p>DrainLab Tools is free. If it saves you time, you can support its development and running costs.</p>
+      <!-- Replace YOUR_PAGE with your Ko-fi (or Buy Me a Coffee) page name -->
+      <a class="btn" href="https://ko-fi.com/drainlabtools" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+    </div>
+
+    <h2>Data sources</h2>
+    <p>M5-60 and r values are digitised from <em>The Wallingford Procedure, Volume 3 – Maps</em> (HR Wallingford, 1981).
+       Z1 and Z2 factors are from <em>The Wallingford Procedure, Volume 4 – Modified Rational Method</em>.
+       Base maps © Esri and contributors, © OpenStreetMap contributors, OpenTopoMap (CC-BY-SA).
+       Postcode search by postcodes.io.</p>
+  </main>
+  <footer>© 2026 DrainLab Tools. All rights reserved. · <a href="terms.html">Terms &amp; privacy</a></footer>
+</body>
+</html>

@@ -3,6 +3,9 @@ body { margin: 0; font-family: Segoe UI, Arial, sans-serif; color: #1d2b36; heig
 header { display: flex; align-items: center; gap: 24px; padding: 10px 16px; background: #0f3b57; color: #fff; }
 .brand { font-size: 22px; font-weight: 700; }
 .brand span { font-size: 12px; font-weight: 400; opacity: .7; margin-left: 6px; }
+header nav { margin-left: auto; }
+header nav a { color: #fff; text-decoration: none; font-size: 14px; opacity: .9; }
+header nav a:hover { opacity: 1; text-decoration: underline; }
 #searchForm { display: flex; flex: 1; max-width: 520px; }
 #searchBox { flex: 1; padding: 8px 10px; border: none; border-radius: 4px 0 0 4px; font-size: 14px; }
 #searchForm button { padding: 8px 14px; border: none; background: #2a9d8f; color: #fff; border-radius: 0 4px 4px 0; cursor: pointer; }
@@ -32,6 +35,9 @@ input[type=number], select { width: 100%; padding: 6px; border: 1px solid #c3ccd
 details { margin-top: 14px; font-size: 13px; }
 code { background: #e7ecf0; padding: 2px 5px; border-radius: 3px; }
 .warning { margin-top: 18px; font-size: 11px; color: #8a5a00; background: #fff4dc; padding: 8px; border-radius: 4px; }
+.warning a { color: #8a5a00; }
+.panel-foot { margin-top: 18px; font-size: 11px; color: #6b7a86; line-height: 1.6; }
+.panel-foot a { color: #0f3b57; }
 .tabs { display: flex; gap: 12px; font-size: 13px; }
 .tab { margin: 0; display: flex; align-items: center; gap: 4px; cursor: pointer; font-size: 13px; }
 small { color: #6b7a86; font-size: 11px; }
